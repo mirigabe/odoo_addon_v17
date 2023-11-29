@@ -3,7 +3,7 @@
     <t t-name="bms.awv_import_action" owl="1">
         <div class="m-3">
             <h1> AWV import and generation tools </h1>
-            <h2> Enumeration </h4>
+            <h2> Enumeration </h2>
             <div class="row">
                 <div class="col-md-auto">
                     <button class="btn btn-primary" t-on-click="import_awv_enumeration_values"> import enumeration values</button>
