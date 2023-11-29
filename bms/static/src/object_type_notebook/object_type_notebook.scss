@@ -1,0 +1,39 @@
+$o-bms-table-width: 100%;
+$o-bms-td-width-attrdef: 30%;
+$o-bms-td-width-attrvalue: 50%;
+$o-bms-td-width-unit: 10%;
+$o-bms-td-width-editbutton: 10%;
+$o-bms-tab-content-width: 100%;
+
+
+// override
+$container-max-widths: (
+  sm: 1000px,
+  md: 1000px,
+  lg: 1000px,
+  xl: 1000px,
+  xxl: 1000px
+) !default;
+
+
+.o_bms_table{
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    width: $o-bms-table-width;
+    td:nth-of-type(1){
+        width: $o-bms-td-width-attrdef;
+    }
+    td:nth-of-type(2) {
+        width: $o-bms-td-width-attrvalue;
+    }
+    td:nth-of-type(3) {
+        width: $o-bms-td-width-unit;
+    }
+    td:nth-of-type(4) {
+        width: $o-bms-td-width-editbutton;
+    }
+}
+
+

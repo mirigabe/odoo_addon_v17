@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="bms.Decomposition" owl="1">
+        <div class="p-2">
+            <div class="o_form_label">
+            Decomposition
+            </div>
+
+            <t t-foreach="decompositionTypeRecords" t-as="decompositionTypeRecord" t-key="decompositionTypeRecord.id">
+                <input type="radio" t-attf-id="decomposition_{{decompositionTypeRecord.id}}" t-attf-value="{{decompositionTypeRecord.id}}" class="o_bms_input_radio" name="decompostion_types" t-att-checked="decompositionTypeRecord_first" />
+                <label t-attf-for="decomposition_{{decompositionTypeRecord.id}}" class="o_input">
+                    <t t-out="decompositionTypeRecord.name"/>
+                </label>
+            </t>
+            <div id="decompositionTree_1" class="o_bms_decomposition">
+            </div>
+
+        </div>
+    </t>
+</templates>

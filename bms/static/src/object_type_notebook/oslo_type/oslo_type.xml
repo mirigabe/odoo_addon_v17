@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="bms.oslo_type" owl="1">
+        <!-- <table class="o_bms_table">
+            <tr>
+                <td>
+                    <span class="o_form_label"> object type  </span>
+                </td>
+                <td >
+                    <t t-out="className"/>
+                </td>
+                <td>
+                </td>
+                <td>
+                    <button class="btn btn-primary" t-on-click="() => this.changeOtlAndType()">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button>
+                </td>
+            </tr>
+        </table>  -->
+        <div class="row m-0 p-0">
+            <div class="col-2 m-0 p-0">
+                <span class="o_form_label"> object type  </span>
+            </div>
+            <div class="col-9 m-0 p-0">
+                <t t-out="className"/>
+            </div>
+            <div class="col-1 m-0 p-0  d-flex justify-content-end">
+                <button class="btn btn-primary" t-on-click="() => this.changeOtlAndType()">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div>
+            <hr></hr>
+        </div>
+        <div>
+            <t t-foreach="attrDefs.attributes" t-as="attribute" t-key="attribute.attr_name">
+                <t t-if="attribute.attr_datatype_def.attr_datatype != 'OSLODatatypeComplex' and attribute.attr_datatype_def.attr_datatype != 'OSLODatatypeUnion' ">
+                    <OsloDatatypePrimitiveEnumeration attr="attribute" objectId="objectId" objectTypeId="objectTypeId"/>
+                </t>
+                <t t-if="attribute.attr_datatype_def.attr_datatype == 'OSLODatatypeComplex' or attribute.attr_datatype_def.attr_datatype == 'OSLODatatypeUnion' ">
+                    <OsloDatatypeIterative attr="attribute" objectId="objectId" objectTypeId="objectTypeId"/>
+                </t>
+            </t>
+        </div>
+    </t>
+</templates>

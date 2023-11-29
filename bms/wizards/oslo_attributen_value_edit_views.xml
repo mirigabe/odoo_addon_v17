@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<record id="bms_oslo_attributen_value_edit_form" model="ir.ui.view">
+    <field name="name">bms.oslo_attributen_value_edit.form</field>
+    <field name="model">bms.oslo_attributen_value_edit</field>
+    <field name="arch" type="xml">
+        <form>
+            <group>
+                <field name="object_id" readonly="1"/>
+                <field name="object_type_id" readonly="1"/>
+                <field name="attr_def_id" readonly="1"/>
+                <field name="attr_def_id_id" readonly="1"/>
+                <field name="attr_name" readonly="1"/>
+                <field name="attr_def" readonly="1" />
+                <field name="attr_def_datatype_definition" readonly="1"/>
+                <field name="attr_def_value_type" readonly="1"/>
+                <field name="attr_def_uri" readonly="1" attrs="{'invisible': 1}"/>
+                <field name="enum_notation" readonly="1" attrs="{'invisible': [('attr_def_value_type', '!=', 'enumeration')]}" />
+                <field name="enum_definition" readonly="1" attrs="{'invisible': [('attr_def_value_type', '!=', 'enumeration')]}" />
+            </group>
+            <group>
+                <field name="value_char" attrs="{'invisible': [('attr_def_value_type', '!=', 'char')]}"/>
+                <field name="value_boolean" attrs="{'invisible': [('attr_def_value_type', '!=', 'boolean')]}"/>
+                <field name="value_date" attrs="{'invisible': [('attr_def_value_type', '!=', 'date')]}"/>
+                <field name="value_datetime" attrs="{'invisible': [('attr_def_value_type', '!=', 'datetime')]}"/>
+                <field name="value_float" attrs="{'invisible': [('attr_def_value_type', '!=', 'float')]}"/>
+                <field name="value_non_negative_integer" attrs="{'invisible': [('attr_def_value_type', '!=', 'non_negative_integer')]}"/>
+                
+                <field name="enumeration_value_id" domain="[('uri', '=', attr_def_uri)]" context="{'enum_display_notation': True}" 
+                       attrs="{'invisible': [('attr_def_value_type', '!=', 'enumeration')]}" />
+                <field name="value_enumeration" attrs="{'invisible': 1}"/> 
+                
+            </group>
+        </form>
+    </field>
+</record>
+</odoo>

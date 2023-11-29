@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bms_otl_type_form" model="ir.ui.view">
+        <field name="name">bms.otl_type.form</field>
+        <field name="model">bms.otl_type</field>
+        <field name="arch" type="xml">
+            <form >
+                <group>
+                    <field name="object_ids"  readonly="1"/>
+                    <field name="otl"  readonly="1"/>
+                    <field name="object_type"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

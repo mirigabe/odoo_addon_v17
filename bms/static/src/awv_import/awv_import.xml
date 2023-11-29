@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="bms.awv_import_action" owl="1">
+        <div class="m-3">
+            <h1> AWV import and generation tools </h1>
+            <h2> Enumeration </h4>
+            <div class="row">
+                <div class="col-md-auto">
+                    <button class="btn btn-primary" t-on-click="import_awv_enumeration_values"> import enumeration values</button>
+                </div>
+                <div class="col-md-auto">
+                    <t t-out="state_import_awv_enum_values.processed"/>
+                    <span> AWV enumerations processed on </span>
+                    <t t-out="state_import_awv_enum_values.total_to_process"/>
+                </div>
+            </div>
+
+            <h2> Attribute Definition generation </h2>
+            <div class="row">
+                <div class="col-md-auto">
+                    <button class="btn btn-primary" t-on-click="populate_table_with_awv_otl"> populate attribute definition table</button>
+                </div>
+                <div class="col-md-auto">
+                    <t t-out="state_populate_att_def_table.processed"/>
+                    <span> AWV classes processed on </span>
+                    <t t-out="state_populate_att_def_table.total_to_process"/>
+                </div>
+            </div>
+
+        </div>
+    </t>
+</templates>

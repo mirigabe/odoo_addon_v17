@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+               
+    <t t-name="bms.object_type_notebook" owl="1">
+
+        <t t-if="!only1AWVtype">
+            <div class="alert alert-info" role="alert">
+                This object has more than one type (of 2 or more OTL's).Change the implemetnation of the BMS to treat those cases
+            </div>
+        </t>
+        <t t-if="!hasAWVtype">
+            <button class="btn btn-primary" t-on-click="() => this.changeOtlAndType()">
+                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                <span> add a type</span>
+            </button>
+        </t>
+         <t t-if="hasAWVtype">
+            <OsloType objectId="objectId" otlId="otlId" objectTypeId="objectTypeId" classUri="classUri" className="className" /> 
+        </t>
+
+    </t>
+</templates>
